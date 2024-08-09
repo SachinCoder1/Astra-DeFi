@@ -51,3 +51,78 @@ dataSources:
         - event: Withdrawn(indexed address,indexed uint256)
           handler: handleWithdrawn
       file: ./src/staking.ts
+  - kind: ethereum
+    name: StakingToken
+    network: mode-sepolia
+    source:
+      address: "0x74df726F77387ebDA41b0b52056A862f41237C0d"
+      abi: StakingToken
+      startBlock: 17666345
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - Transfer
+      abis:
+        - name: StakingToken
+          file: ./abis/StakingToken.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/staking-token.ts
+  - kind: ethereum
+    name: RewardToken
+    network: mode-sepolia
+    source:
+      address: "0x742Df2E9B29bA22687FC509f9356776176273DaB"
+      abi: RewardToken
+      startBlock: 17666353
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - RewardTokenApproval
+        - RewardTokenTransfer
+      abis:
+        - name: RewardToken
+          file: ./abis/RewardToken.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/reward-token.ts
+  - kind: ethereum
+    name: AMM
+    network: mode-sepolia
+    source:
+      address: "0x669C5f1a698Ab3a56A1a85b64dCFFE5fE2bB7e1F"
+      abi: AMM
+      startBlock: 17666378
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - LiquidityProvided
+        - LiquidityRemoved
+        - AMMOwnershipTransferred
+        - Swapped
+      abis:
+        - name: AMM
+          file: ./abis/AMM.json
+      eventHandlers:
+        - event: LiquidityProvided(indexed address,indexed uint256,indexed uint256)
+          handler: handleLiquidityProvided
+        - event: LiquidityRemoved(indexed address,indexed uint256,indexed uint256)
+          handler: handleLiquidityRemoved
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Swapped(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleSwapped
+      file: ./src/amm.ts

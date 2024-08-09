@@ -1,8 +1,20 @@
 {
-  "mode-sepolia": {
+  "mode-testnet": {
     "Staking": {
       "address": "0xdfE84AAb2A3E9Db1b35A64Ccf05faB6bFfBb63b7",
       "startBlock": 17666362
+    },
+    "StakingToken": {
+      "address": "0x74df726F77387ebDA41b0b52056A862f41237C0d",
+      "startBlock": 17666345
+    },
+    "RewardToken": {
+      "address": "0x742Df2E9B29bA22687FC509f9356776176273DaB",
+      "startBlock": 17666353
+    },
+    "AMM": {
+      "address": "0x669C5f1a698Ab3a56A1a85b64dCFFE5fE2bB7e1F",
+      "startBlock": 17666378
     }
   }
 }
