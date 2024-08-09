@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@web3modal/ethers": "^5.0.11",
     "clsx": "^2.1.1",
+    "ethers": "^6.13.2",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.4.0"
+    "tailwind-merge": "^2.4.0",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",
