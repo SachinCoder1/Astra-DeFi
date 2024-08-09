@@ -1,0 +1,8 @@
+{
+  "mode-sepolia": {
+    "Staking": {
+      "address": "0xdfE84AAb2A3E9Db1b35A64Ccf05faB6bFfBb63b7",
+      "startBlock": 17666362
+    }
+  }
+}

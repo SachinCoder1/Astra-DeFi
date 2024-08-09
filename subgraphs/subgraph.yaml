@@ -1,0 +1,53 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Staking
+    network: mode-sepolia
+    source:
+      address: "0xdfE84AAb2A3E9Db1b35A64Ccf05faB6bFfBb63b7"
+      abi: Staking
+      startBlock: 17666362
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - EmergencyWithdrawal
+        - LoanRepaid
+        - LoanTaken
+        - OwnershipTransferred
+        - Paused
+        - RewardRateUpdated
+        - RewardsClaimed
+        - Staked
+        - Unpaused
+        - Withdrawn
+      abis:
+        - name: Staking
+          file: ./abis/Staking.json
+      eventHandlers:
+        - event: EmergencyWithdrawal(indexed address,indexed uint256)
+          handler: handleEmergencyWithdrawal
+        - event: LoanRepaid(indexed address,indexed uint256)
+          handler: handleLoanRepaid
+        - event: LoanTaken(indexed address,indexed uint256)
+          handler: handleLoanTaken
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Paused(address)
+          handler: handlePaused
+        - event: RewardRateUpdated(uint256)
+          handler: handleRewardRateUpdated
+        - event: RewardsClaimed(indexed address,indexed uint256)
+          handler: handleRewardsClaimed
+        - event: Staked(indexed address,indexed uint256)
+          handler: handleStaked
+        - event: Unpaused(address)
+          handler: handleUnpaused
+        - event: Withdrawn(indexed address,indexed uint256)
+          handler: handleWithdrawn
+      file: ./src/staking.ts
