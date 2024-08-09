@@ -1,5 +1,6 @@
 import { Web3Modal } from "@/context/web3modal";
 import React from "react";
+import { ThemeProvider } from "./theme-provider";
 
 type Props = {
   children: React.ReactNode;
@@ -8,9 +9,14 @@ type Props = {
 const Providers = ({ children }: Props) => {
   return (
     <div>
-        <Web3Modal>
-          {children}
-        </Web3Modal>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <Web3Modal>{children}</Web3Modal>
+      </ThemeProvider>
     </div>
   );
 };
