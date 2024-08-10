@@ -6,27 +6,21 @@ import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 const projectId = "your_project_id";
 
 // 2. Set chains
-const mainnet = {
-  chainId: 1,
-  name: "Ethereum",
+
+const modeSepolia = {
+  chainId: 919,
+  name: "Mode Testnet",
   currency: "ETH",
-  explorerUrl: "https://etherscan.io",
-  rpcUrl: "https://cloudflare-eth.com",
+  explorerUrl: "https://sepolia.explorer.mode.network",
+  rpcUrl: "https://sepolia.mode.network",
 };
 
-const localhost = {
-  chainId: 1337,
-  name: "Localhost",
+const baseSepolia = {
+  chainId: 84532,
+  name: "Base Sepolia",
   currency: "ETH",
-  explorerUrl: "https://etherscan.io",
-  rpcUrl: "http://127.0.0.1:8545",
-};
-const sepolia = {
-  chainId: 11155111,
-  name: "Sepolia",
-  currency: "ETH",
-  explorerUrl: "https://sepolia.etherscan.io",
-  rpcUrl: "https://rpc.sepolia.org",
+  explorerUrl: "https://base-sepolia.blockscout.com",
+  rpcUrl: "https://sepolia.base.org",
 };
 
 // 3. Create a metadata object
@@ -34,9 +28,9 @@ const metadata = {
   name: "My Website",
   description: "My Website description",
   url: "https://mywebsite.com", // origin must match your domain & subdomain
-  icons: ["https://avatars.mywebsite.com/"],
+  icons: ["https://avatars.mywebsite.com"],
 };
-const chains = [mainnet, localhost,sepolia];
+const chains = [modeSepolia,baseSepolia];
 // 4. Create Ethers config
 const ethersConfig = defaultConfig({
   /*Required*/
