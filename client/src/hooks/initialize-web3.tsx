@@ -5,12 +5,14 @@ import {
 } from "@web3modal/ethers/react";
 import { BrowserProvider } from "ethers";
 import { useWeb3Store } from "@/store/signer-provider-store";
+import useInitializeTokens from "./use-initialize-tokens";
 
 const useInitializeWeb3 = () => {
   const { walletProvider } = useWeb3ModalProvider();
   const { isConnected, chainId, status, address } = useWeb3ModalAccount();
   const { setProvider, setSigner, setIsConnected, reset, setAddress } =
     useWeb3Store();
+  useInitializeTokens();
 
   useEffect(() => {
     const initialize = async () => {
