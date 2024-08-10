@@ -6,7 +6,7 @@ import { STAKING_ADDRESS } from "@/lib/constants";
 
 type State = {
   tokenDetails: {
-    dtx: {
+    atx: {
       name: string;
       symbol: string;
       totalSupply: string;
@@ -35,9 +35,9 @@ type Action = {
 
 const initialState: State = {
   tokenDetails: {
-    dtx: {
+    atx: {
       name: "Staking Token",
-      symbol: "DTX",
+      symbol: "ATX",
       totalSupply: "100000",
     },
     dusd: {
@@ -132,7 +132,7 @@ export const useTokenStore = create<State & Action>((set, get) => ({
 
   //     set({
   //       tokenDetails: {
-  //         dtx: {
+  //         atx: {
   //           name: stakingTokenName || "",
   //           symbol: stakingTokenSymbol || "",
   //           totalSupply: formattedStakingSupply || "0",

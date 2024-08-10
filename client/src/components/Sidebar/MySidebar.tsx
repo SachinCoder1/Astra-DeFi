@@ -72,7 +72,7 @@ const MySidebar = (props: MySidebarProps) => {
   return (
     <div className="flex flex-col h-full">
       {/* <div className="flex items-center justify-center h-14 border-b pb-4">
-        <div>Tokens - DTX and dUSD</div>
+        <div>Tokens - ATX and dUSD</div>
       </div> */}
       {/* <DrawerClose>
         <Button variant="ghost" size={"sm"}>
