@@ -4,4 +4,4 @@ export const STAKING_ADDRESS = "0xdfE84AAb2A3E9Db1b35A64Ccf05faB6bFfBb63b7";
 export const FAUCET_CONTRACT_ADDRESS = "0xafA061A7127C0b1929FA9068413ccF1C9335a368";
 export const AMM_CONTRACT_ADDRESS = "0x669C5f1a698Ab3a56A1a85b64dCFFE5fE2bB7e1F";
 
-export const BLOCK_EXPLORER_LINK = "";
+export const BLOCK_EXPLORER = "https://sepolia.explorer.mode.network";

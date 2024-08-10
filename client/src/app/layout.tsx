@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Providers from "@/components/providers";
+import Navbar from "@/components/navbar";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,7 +31,11 @@ export default function RootLayout({
         )}
       >
         <Providers>
+          <nav className="sticky h-14 px-8 inset-x-0 top-0 z-30 w-full border-b border-gray-200 backdrop-blur-lg transition-all">
+            <Navbar />
+          </nav>
           <div className="">{children}</div>
+          <Toaster duration={2000} />
         </Providers>
       </body>
     </html>
