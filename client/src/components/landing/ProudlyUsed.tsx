@@ -13,7 +13,7 @@ const PartnerCard = ({ src, text, link }: PartnerProps) => {
     <Link
       target="_blank"
       href={link}
-      className="flex items-center gap-x-4 p-2 rounded-lg dark:bg-neutral-900 bg-neutral w-max"
+      className="flex items-center gap-x-4 p-2 rounded-lg bg-neutral-900 text-white w-max"
     >
       <Image src={src} width={30} height={30} alt={text} />
       {text}
