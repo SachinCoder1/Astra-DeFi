@@ -5,3 +5,19 @@ export const FAUCET_CONTRACT_ADDRESS = "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0F
 export const AMM_CONTRACT_ADDRESS = "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9";
 
 export const BLOCK_EXPLORER = "https://www.sepolia.etherscan.io";
+
+
+/*
+TODO:
+
+add the base contracts as well:
+
+Staking Token deployed to: 0x09572c39b311834047b694EC77A614822ffBb1ff
+Reward Token deployed to: 0xc0C357bCCc6CFfeef97b792c72774b4c47B3D884
+Staking deployed to: 0x3B61C76fAD6c88FA565Ed538524d10C25f63ee75
+Faucet deployed to: 0xBD22719907F3839EEc1f7482Af0788e26ed447F9
+AMM deployed to: 0x21fb6F632054669EA240adAF0BCd6930Ba029A82
+
+BLOCK_EXPLORER = https://base-sepolia.blockscout.com
+
+*/
