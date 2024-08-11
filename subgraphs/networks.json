@@ -16,5 +16,23 @@
       "address": "0x669C5f1a698Ab3a56A1a85b64dCFFE5fE2bB7e1F",
       "startBlock": 17666378
     }
+  },
+  "base-sepolia": {
+    "Staking": {
+      "address": "0x3B61C76fAD6c88FA565Ed538524d10C25f63ee75",
+      "startBlock": 13757123
+    },
+    "StakingToken": {
+      "address": "0x09572c39b311834047b694EC77A614822ffBb1ff",
+      "startBlock": 13757105
+    },
+    "RewardToken": {
+      "address": "0xc0C357bCCc6CFfeef97b792c72774b4c47B3D884",
+      "startBlock": 13757114
+    },
+    "AMM": {
+      "address": "0x21fb6F632054669EA240adAF0BCd6930Ba029A82",
+      "startBlock": 13757139
+    }
   }
 }

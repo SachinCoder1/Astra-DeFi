@@ -35,12 +35,13 @@ const useInitializeWeb3 = () => {
       const signer = await ethersProvider.getSigner();
       setSigner(signer);
       setAddress(address as string);
+      localStorage.setItem("chainId", chainId)
 
       setIsConnected(true);
     };
 
     initialize();
-  }, [walletProvider, setProvider, setSigner, setIsConnected, status]);
+  }, [walletProvider, setProvider, setSigner, setIsConnected, status,chainId]);
 };
 
 export default useInitializeWeb3;

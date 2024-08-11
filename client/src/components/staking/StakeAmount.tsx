@@ -73,6 +73,8 @@ const StakeAmount = (props: Props) => {
       const amountToStake = ethers.parseUnits(data.amount, 18).toString();
 
       const maxFeePerGas = ethers.parseUnits("100", "gwei"); // 100 gwei
+      const toastId = toast.loading("Please Approve when prompted");
+
       const approveTx = await stakingTokenContract.approve(
         STAKING_ADDRESS,
         amountToStake,
@@ -81,15 +83,19 @@ const StakeAmount = (props: Props) => {
         }
       );
 
+      toast.loading("Please wait while it is being approved", {
+        id: toastId,
+      });
+
       const approveReceipt: TransactionReceipt = await approveTx.wait();
       console.log("approve receipt", approveReceipt);
 
       const tx = await stakingContract.stake(amountToStake, {
         maxFeePerGas: maxFeePerGas,
       });
-      const toastId = toast.loading(
-        "Your ATX is being staked! This may take a few moments"
-      );
+      toast.loading("Your ATX is being staked! This may take a few moments", {
+        id: toastId,
+      });
       const receipt: TransactionReceipt = await tx.wait();
       console.log("receipt:", receipt);
       toast.success("Successfully Staked!", {

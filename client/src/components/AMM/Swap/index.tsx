@@ -119,6 +119,7 @@ const Swap = (props: Props) => {
         .parseUnits(calculateMinReceived(data.fromAmount), 18)
         .toString();
 
+        const toastId = toast.loading("Please Approve when prompted");
       let approveTx;
       if (fromToken === "ATX") {
         approveTx = await stakingTokenContract.approve(
@@ -139,6 +140,9 @@ const Swap = (props: Props) => {
       } else {
         throw new Error("Something went wrong");
       }
+      toast.loading("Please wait while it is being approved", {
+        id: toastId,
+      });
 
       const approveReceipt: TransactionReceipt = await approveTx?.wait();
       console.log("approve receipt", approveReceipt);
@@ -149,8 +153,10 @@ const Swap = (props: Props) => {
         minAmountOut,
         { maxFeePerGas: maxFeePerGas }
       );
-      const toastId = toast.loading(
-        "Swapping is being done! This may take a few moments"
+      toast.loading(
+        "Swapping is being done! This may take a few moments", {
+          id: toastId
+        }
       );
 
       const receipt: TransactionReceipt = await swapTx.wait();
