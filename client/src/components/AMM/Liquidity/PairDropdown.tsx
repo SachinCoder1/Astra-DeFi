@@ -44,7 +44,7 @@ const PairDropdown = ({ defaultValue, onValueChange, value }: Props) => {
             className="justify-start"
           >
             <div className="flex items-center gap-x-2">
-              <Image width={20} height={20} src="/atx-token.svg" alt="icon" />
+              <Image width={20} height={20} src="/dusd-token.svg" alt="icon" />
               <span className="font-semibold text-base">
                 {tokenDetails.dusd.symbol}
               </span>

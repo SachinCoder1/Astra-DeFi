@@ -4,12 +4,14 @@ import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 
 // 1. Get projectId from https://cloud.walletconnect.com
 const projectId = "your_project_id";
+// const projectId = "75719a22fb55b38c8d1c3c01ad27b9d6";
+
 
 // 2. Set chains
 
 const modeSepolia = {
   chainId: 919,
-  name: "Mode Testnet",
+  name: "Mode Testnet", 
   currency: "ETH",
   explorerUrl: "https://sepolia.explorer.mode.network",
   rpcUrl: "https://sepolia.mode.network",

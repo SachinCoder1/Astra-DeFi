@@ -68,7 +68,7 @@ const PoolInfo = (props: Props) => {
         subValue="As of now"
       />
       <InfoCard
-        icon={<Image width={20} height={20} src="/atx-token.svg" alt="icon" />}
+        icon={<Image width={20} height={20} src="/dusd-token.svg" alt="icon" />}
         title="Your Pooled dUSD"
         value={`${formatNumber(userLiquidityInTokens.dusd)} ${
           tokenDetails.dusd.symbol

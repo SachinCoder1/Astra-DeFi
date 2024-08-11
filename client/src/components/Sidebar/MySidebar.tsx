@@ -18,7 +18,7 @@ import {
   XIcon,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { Fragment } from "react";
 import { DrawerClose } from "../ui/drawer";
 import { Button } from "../ui/button";
 import { links } from "@/lib/links";
@@ -83,7 +83,7 @@ const MySidebar = (props: MySidebarProps) => {
       <div className="overflow-y-auto overflow-x-hidden flex-grow">
         <ul className="flex flex-col space-y-1">
           {links.map((item, index) => (
-            <>
+            <Fragment key={index}>
               <li className="px-5">
                 <div className="flex flex-row items-center h-8">
                   <div className="text-sm font-light tracking-wide text-muted-foreground">
@@ -105,7 +105,7 @@ const MySidebar = (props: MySidebarProps) => {
                   // subLabelColor={(item?.subLabelColor as any) || "green"}
                 />
               ))}
-            </>
+            </Fragment>
           ))}
         </ul>
       </div>

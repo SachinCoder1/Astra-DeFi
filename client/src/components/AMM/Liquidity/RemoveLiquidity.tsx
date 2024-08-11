@@ -253,7 +253,7 @@ const RemoveLiquidity = (props: Props) => {
                   <Image
                     width={20}
                     height={20}
-                    src="/atx-token.svg"
+                    src="/dusd-token.svg"
                     alt="icon"
                   />
                   {tokenDetails.dusd.symbol}

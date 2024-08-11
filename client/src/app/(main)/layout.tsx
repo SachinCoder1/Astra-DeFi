@@ -10,6 +10,7 @@ import ResizableMain from "@/components/ResizableMain";
 import { ShootingStarsAndStarsBackgroundDemo } from "@/components/landing/StarsBackground";
 import { Heading } from "@/components/ui/Typography";
 import { ShootingStars } from "@/components/ui/animations/shooting-stars";
+import { SUPPORTED_CHAINS } from "@/lib/constants";
 
 type Props = {
   children: React.ReactNode;
@@ -22,7 +23,7 @@ const Layout = ({ children }: Props) => {
   const { switchNetwork } = useSwitchNetwork();
   const handleSwitch = () => {
     try {
-      switchNetwork(1337);
+      switchNetwork(SUPPORTED_CHAINS[0]);
     } catch (error) {}
   };
 
@@ -38,7 +39,7 @@ const Layout = ({ children }: Props) => {
     );
   }
 
-  if (chainId && ![919,84532].includes(chainId)) {
+  if (chainId && !SUPPORTED_CHAINS.includes(chainId)) {
     return (
       <div>
         <div className="h-[45rem] rounded-md dark:bg-neutral-900 flex flex-col items-center justify-center relative w-full">
