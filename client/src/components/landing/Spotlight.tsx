@@ -7,7 +7,7 @@ import { buttonVariants } from "../ui/button";
 import { FlipWords } from "../ui/animations/flip-words";
 
 export function SpotlightPreview() {
-  const words = ["Invest", "Borrow", "Repay", "Stake", "Pools"]
+  const words = ["Invest", "Borrow", "Repay", "Stake", "Pools", "AMM"];
   return (
     <div className="lg:h-[40rem] w-full rounded-md flex md:items-center md:justify-center dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Spotlight
